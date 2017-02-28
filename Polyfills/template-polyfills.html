@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Web Components - Template</title>
+    <script src="webcomponentsjs\webcomponents.js"></script>
+</head>
+
+<body>
+    <!-- =================================================================== -->
+    <!-- Created template -->
+    <!-- =================================================================== -->
+
+    <template>
+        <p>This is first template. Hello World!</p>
+    </template>
+
+    <!-- =================================================================== -->
+    <!-- Script initialize template -->
+    <!-- =================================================================== -->
+    
+    <script>
+        
+        // get template
+        var template = document.querySelector('template');
+
+        // clone content template
+        var templateClone = document.importNode(template.content, true);
+
+        // Add content in DOM tree
+        document.body.appendChild(templateClone);
+        
+    </script>
+</body>
+
+</html>

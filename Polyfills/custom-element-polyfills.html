@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Web Components - Custom element</title>
+    <script src="webcomponentsjs\webcomponents.js"></script>
+</head>
+
+<body>
+    <!-- =================================================================== -->
+    <!-- Created user web-components -->
+    <!-- =================================================================== -->
+
+    <hello-world></hello-world>
+
+    <!-- =================================================================== -->
+    <!-- Created script for custom tag web-components -->
+    <!-- =================================================================== -->
+
+    <script>
+        
+        // Definition and prototyping
+        var helloWorldComponentProto = Object.create(HTMLElement.prototype);
+
+        // Call the callback function
+        helloWorldComponentProto.createdCallback = function () {
+            this.innerHTML = '<h3>Hello World</h3>';
+        }
+
+        // Register element 
+        var helloWorld = document.registerElement('hello-world', {
+            prototype: helloWorldComponentProto
+        });
+
+        /*var custom = new helloWorld();
+        document.body.appendChild(custom);*/
+    </script>
+</body>
+
+</html>
