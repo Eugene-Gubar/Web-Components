@@ -27,6 +27,11 @@
             this.innerHTML = '<h3>Hello World</h3>';
         }
 
+        // Register element 
+        var helloWorld = document.registerElement('hello-world', {
+            prototype: helloWorldComponentProto
+        });
+
     </script>
 </body>
 
