@@ -22,6 +22,11 @@
         // Definition and prototyping
         var helloWorldComponentProto = Object.create(HTMLElement.prototype);
 
+        // Call the callback function
+        helloWorldComponentProto.createdCallback = function () {
+            this.innerHTML = '<h3>Hello World</h3>';
+        }
+
     </script>
 </body>
 
