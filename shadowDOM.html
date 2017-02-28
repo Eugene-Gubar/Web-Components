@@ -51,7 +51,8 @@
         // Create root
         var root = host.createShadowRoot();
 
-        
+        // Get and add content in ShadowDOM
+        root.appendChild(document.importNode(template.content, true));
 
     </script>
 
