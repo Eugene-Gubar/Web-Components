@@ -4,14 +4,17 @@
 // =============================================================================
 (function () {
 
+    // Import current document
+    var importDoc = document.currentScript.ownerDocument;
+
     // Create definition and prototyping
     var appImportComponentProto = Object.create(HTMLElement.prototype);
 
     // Call the callback function, clone and paste template #appImport content in custom element (<app-import></app-import>)
     appImportComponentProto.createdCallback = function () {
-        var template = document.querySelector('#appImport');
+        var template = importDoc.querySelector('#appImport');
 
-        this.appendChild(document.importNode(template.contant, true));
+        this.appendChild(document.importNode(template.content, true));
     };
 
     // Register and init element
