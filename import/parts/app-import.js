@@ -13,8 +13,8 @@
     // Call the callback function, clone and paste template #appImport content in custom element (<app-import></app-import>)
     appImportComponentProto.createdCallback = function () {
         var template = importDoc.querySelector('#appImport');
-
-        this.appendChild(document.importNode(template.content, true));
+        var root = this.createShadowRoot();
+        root.appendChild(document.importNode(template.content, true));
     };
 
     // Register and init element
